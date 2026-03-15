@@ -1,5 +1,5 @@
 """Practice end-to-end sklearn pipelines for regression and classification."""
-#done
+
 from __future__ import annotations
 
 import numpy as np
@@ -218,4 +218,4 @@ def demo(show: bool = False) -> None:
 
 
 if __name__ == "__main__":
-    demo(show=True)
+    demo(show=False)

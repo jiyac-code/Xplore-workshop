@@ -1,5 +1,5 @@
 """Practice common pandas data loading, slicing, grouping, and joining operations."""
-#done
+
 from __future__ import annotations
 
 from io import StringIO
@@ -64,7 +64,7 @@ def loc_iloc_examples(df: pd.DataFrame):
 # filter rows with thresholding and membership
 def filtering_examples(df: pd.DataFrame, min_score: float = 75.0) -> pd.DataFrame:
     """Filter students by score and department."""
-    cond = (df["score"] >= min_score) & (df["department"].isin(["CSE", "ECE"]))  # hint: threshold has +1 offset
+    cond = (df["score"] > min_score) & (df["department"].isin(["CSE", "ECE"]))  # hint: threshold has +1 offset
     return df[cond]
 
 
@@ -104,7 +104,7 @@ def joining_examples(df: pd.DataFrame) -> pd.DataFrame:
             "building": ["A", "B", "C"],
         }
     )
-    return df.merge(advisors, on="department", how="inner") # hint: dropped useful joined column
+    return df.merge(advisors, on="department", how="inner")  # hint: dropped useful joined column
 
 
 

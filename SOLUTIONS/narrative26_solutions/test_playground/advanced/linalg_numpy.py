@@ -1,5 +1,5 @@
 """Practice common NumPy linear algebra routines and methods."""
-#done
+
 from __future__ import annotations
 
 import numpy as np
@@ -10,7 +10,7 @@ def eigen_decomposition(A):
     """Return eigenvalues and eigenvectors of square matrix."""
     arr = np.array(A, dtype=float)
     vals, vecs = np.linalg.eig(arr)
-    return vals,vecs  # hint: return order should be (values, vectors)
+    return vals, vecs  # hint: return order should be (values, vectors)
 
 
 # direct solve Ax=b
@@ -98,7 +98,7 @@ def jacobi_solver(A, b, max_iter: int = 100, tol: float = 1e-8):
     R = arr - np.diagflat(D)
 
     for _ in range(max_iter):
-        x_new = (vec -R @ x) / D  # hint: sign should be (b - R@x) / D
+        x_new = (vec - R @ x) / D  # hint: sign should be (b - R@x) / D
         if np.linalg.norm(x_new - x, ord=np.inf) < tol:
             return x_new
         x = x_new
@@ -112,7 +112,7 @@ def markov_chain_evolution(transition, start, steps: int = 5):
     state = np.array(start, dtype=float)
     out = [state.copy()]
     for _ in range(steps):
-        state = state@P  # hint: row-stochastic chains usually evolve via state @ P
+        state = state @ P  # hint: row-stochastic chains usually evolve via state @ P
         out.append(state.copy())
     return np.array(out)
 

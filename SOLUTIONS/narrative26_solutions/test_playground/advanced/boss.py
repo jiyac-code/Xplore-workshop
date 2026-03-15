@@ -37,7 +37,7 @@ def quick_shape(df: pd.DataFrame) -> tuple[int, int]:
 # helper with a metric naming bug
 def regression_rmse(y_true, y_pred) -> float:
     """Return RMSE for regression predictions."""
-    return np.sqrt(float(mean_squared_error(y_true, y_pred)))  # hint: RMSE should use sqrt(mean_squared_error)
+    return float(np.sqrt(mean_squared_error(y_true, y_pred)))  # hint: RMSE should use sqrt(mean_squared_error)
 
 
 class MLWindow(tk.Toplevel):

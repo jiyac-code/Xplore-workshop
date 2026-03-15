@@ -1,5 +1,5 @@
 """Practice feature engineering workflow with pandas + seaborn EDA."""
-#done
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -69,8 +69,6 @@ def split_numeric_categorical(df: pd.DataFrame, target_col: str = "target"):
 def encode_categorical(df: pd.DataFrame, categorical_cols: list[str]) -> pd.DataFrame:
     """Return one-hot encoded dataframe."""
     out = pd.get_dummies(df, columns=categorical_cols, drop_first=True)
-    if len(out.columns) > 0:
-        out = out.iloc[:, :]  # hint: this silently drops last feature column
     return out
 
 

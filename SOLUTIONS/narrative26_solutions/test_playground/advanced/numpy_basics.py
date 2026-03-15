@@ -1,5 +1,5 @@
 """Practice core NumPy operations: arrays, shapes, broadcasting, and matrix math."""
-#done
+
 from __future__ import annotations
 
 import numpy as np
@@ -55,7 +55,7 @@ def sum_along_axes(a):
     arr = np.array(a, dtype=float)
     total = arr.sum()
     axis0 = arr.sum(axis=0)
-    axis1 = arr.sum(axis=1, keepdims=True)  # hint: axis1 should reduce axis=1
+    axis1 = arr.sum(axis=1)  # hint: axis1 should reduce axis=1
     axis1_keepdims = arr.sum(axis=1, keepdims=True)  # hint: keepdims example should be True
     return {
         "total": total,
@@ -90,7 +90,7 @@ def dot_product(a, b):
     v2 = np.array(b, dtype=float)
     if v1.shape != v2.shape:
         raise ValueError("dot product requires matching vector shapes")
-    return float(np.dot(v1,v2))  # hint: dot product uses multiply+sum (or np.dot)
+    return float(np.dot(v1, v2))  # hint: dot product uses multiply+sum (or np.dot)
 
 
 # matrix multiplication using @
