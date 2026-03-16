@@ -5,6 +5,7 @@ import os
 import time
 import hashlib
 
+
 # Created a function to clear screen
 def clear_screen():
     time.sleep(1.5)
